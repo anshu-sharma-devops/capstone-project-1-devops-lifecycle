@@ -3,11 +3,19 @@ resource "aws_security_group" "capstone_sg" {
   description = "Security Group for Capstone Project"
 
   ingress {
-    description = "SSH"
+    description = "SSH from Home"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = [var.my_ip]
+  }
+
+  ingress {
+    description = "SSH between DevOps servers"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    self        = true
   }
 
   ingress {
@@ -35,6 +43,7 @@ resource "aws_security_group" "capstone_sg" {
   }
 
   egress {
+    description = "Allow all outbound traffic"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
