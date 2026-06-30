@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "capstone-webapp"
         CONTAINER_NAME = "capstone-prod"
-        PROD_SERVER = "ubuntu@3.7.70.251"
+       PROD_SERVER = "ubuntu@172.31.5.125"
     }
 
     stages {
