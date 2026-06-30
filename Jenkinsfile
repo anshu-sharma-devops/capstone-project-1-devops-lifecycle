@@ -26,7 +26,9 @@ pipeline {
 
         stage('job3-prod') {
             when {
-                branch 'main'
+                expression {
+                    env.GIT_BRANCH == 'origin/main'
+                }
             }
             steps {
                 sh '''
