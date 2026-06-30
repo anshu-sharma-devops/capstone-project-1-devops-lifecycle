@@ -21,4 +21,5 @@ variable "key_name" {
 variable "my_ip" {
   description = "My Public IP"
   default     = "106.219.165.155/32"
+
 }
